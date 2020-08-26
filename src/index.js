@@ -66,24 +66,6 @@ function addBreedsToUrl(letter = "all") {
     }
 }
 
-// function test(breeds){
-//     let li = document.createElement('li');
-//     li.innerText = breed
-//     li.setAttribute("data-breed", "general")
-//     ul.append(li)
-//     if (breeds.message[breed].length > 0){
-//         let innerUl = document.createElement("ul")
-//         li.append(innerUl)
-                    
-//         breeds.message[breed].forEach( specificBreed => {
-//             let innerLi = document.createElement('li')
-//             innerLi.innerText = specificBreed
-//             innerLi.setAttribute("data-breed", "specific")
-//             innerUl.append(innerLi)
-//         })
-//     }
-// }
-
 ul.addEventListener("click", function(){
     switch(event.target.dataset.breed){
         case "general":
@@ -98,7 +80,7 @@ ul.addEventListener("click", function(){
 addBreedsToUrl()
 
 const selection = document.querySelector("#breed-dropdown")
-// addBreedsToUrl(selection.value)
+
 selection.addEventListener("change", function(){
     ul.innerText = "";
     switch(selection.value){
