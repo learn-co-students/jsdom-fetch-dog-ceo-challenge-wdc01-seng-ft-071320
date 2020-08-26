@@ -27,7 +27,7 @@ function addBreedsToUrl(letter = "all") {
 
     function addBreed(breeds) {
         for ( const breed in breeds.message) {
-            if (letter != "all" && breed[0] === letter) {
+            if (letter != "all" && breed[0] === letter || letter == "all") {
                 let li = document.createElement('li');
                 li.innerText = breed
                 li.setAttribute("data-breed", "general")
@@ -44,24 +44,26 @@ function addBreedsToUrl(letter = "all") {
                     })
                 }
                 
-            } else if (letter == "all") {
-                let li = document.createElement('li');
-                li.innerText = breed
-                li.setAttribute("data-breed", "general")
-                ul.append(li)
-                if (breeds.message[breed].length > 0){
-                    let innerUl = document.createElement("ul")
-                    li.append(innerUl)
+            } 
+
+            // else if (letter == "all") {
+            //     let li = document.createElement('li');
+            //     li.innerText = breed
+            //     li.setAttribute("data-breed", "general")
+            //     ul.append(li)
+            //     if (breeds.message[breed].length > 0){
+            //         let innerUl = document.createElement("ul")
+            //         li.append(innerUl)
                     
-                    breeds.message[breed].forEach( specificBreed => {
-                        let innerLi = document.createElement('li')
-                        innerLi.innerText = specificBreed
-                        innerLi.setAttribute("data-breed", "specific")
-                        innerUl.append(innerLi)
-                    })
-                }
+            //         breeds.message[breed].forEach( specificBreed => {
+            //             let innerLi = document.createElement('li')
+            //             innerLi.innerText = specificBreed
+            //             innerLi.setAttribute("data-breed", "specific")
+            //             innerUl.append(innerLi)
+            //         })
+            //     }
                 
-            }
+            // }
         }
     }
 }
