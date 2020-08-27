@@ -27,7 +27,7 @@ function addBreedsToUrl(letter = "all") {
 
     function addBreed(breeds) {
         for ( const breed in breeds.message) {
-            if (letter != "all" && breed[0] === letter || letter == "all") {
+            if (breed[0] === letter || letter == "all") {
                 let li = document.createElement('li');
                 li.innerText = breed
                 li.setAttribute("data-breed", "general")
